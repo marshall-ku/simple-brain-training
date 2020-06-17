@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Keypad from "./Keypad";
+import Question from "./Question";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const randomNumber = (min, max) => {
+    return Math.round(Math.random() * max) + min;
+};
+
+const generateQuestion = (length, min, max) => {
+    const arr = [];
+    for (let i = 0; i < length; i++) {
+        arr.push(`${randomNumber(min, max)} * ${randomNumber(min, max)}`);
+    }
+    return arr;
+};
+
+class App extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            question: generateQuestion(20, 1, 10),
+        };
+        this.confirm = this.confirm.bind(this);
+    }
+
+    confirm = (number) => {
+        this.setState({
+            answer: number,
+        });
+    };
+
+    render() {
+        return (
+            <React.Fragment>
+                <Question
+                    questionList={this.state.question}
+                    value={this.state.answer}
+                />
+                <Keypad confirm={this.confirm} />
+            </React.Fragment>
+        );
+    }
 }
 
 export default App;
