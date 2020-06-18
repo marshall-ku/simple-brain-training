@@ -41,9 +41,9 @@ class Question extends React.Component {
         generateNumbers();
     };
 
-    componentDidUpdate(nextProps) {
+    componentDidUpdate(prevProps) {
         const { value } = this.props;
-        if (nextProps.value !== value) {
+        if (prevProps.value !== value) {
             if (value) {
                 if (this.state.first * this.state.second === +value) {
                     if (this.state.index === this.props.questionLength - 1) {

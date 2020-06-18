@@ -34,9 +34,9 @@ class Input extends React.Component {
         });
     }
 
-    componentDidUpdate(nextProps) {
+    componentDidUpdate(prevProps) {
         const { value } = this.props;
-        if (nextProps.value !== value) {
+        if (prevProps.value !== value) {
             const trueValue = value.replace(/-(.*)/g, "");
             if (trueValue) {
                 if (trueValue === "del") {
