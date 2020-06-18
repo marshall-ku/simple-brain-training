@@ -69,12 +69,12 @@ class App extends React.Component {
                             문제 : <span>{this.state.count} 개</span>
                         </span>
                         <span>
-                            초당 :{" "}
+                            문제당 :{" "}
                             <span>
                                 {(
                                     this.state.doneTime / this.state.count
                                 ).toFixed(2)}{" "}
-                                개
+                                초
                             </span>
                         </span>
                     </div>
