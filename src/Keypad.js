@@ -55,11 +55,17 @@ class Input extends React.Component {
     render() {
         if (this.state.touchable) {
             return (
-                <input value={this.state.input} readOnly type="number"></input>
+                <input
+                    id="input"
+                    value={this.state.input}
+                    readOnly
+                    type="number"
+                ></input>
             );
         } else {
             return (
                 <input
+                    id="input"
                     value={this.state.input}
                     onKeyDown={this.handleKeyDown}
                     onChange={this.handleChange}

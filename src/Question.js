@@ -34,7 +34,9 @@ class Question extends React.Component {
 
     render() {
         return (
-            <div id="question">{this.props.questionList[this.state.index]}</div>
+            <div id="question">
+                {this.props.questionList[this.state.index]} = ?
+            </div>
         );
     }
 }

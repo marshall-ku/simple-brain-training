@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "S-CoreDream-8Heavy";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff")
+        format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 *,
 ::before,
 ::after {
@@ -6,7 +15,13 @@
     outline: 0;
     border: 0;
     background: none;
+    box-sizing: border-box;
+    font-family: inherit;
     -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    font-family: "S-CoreDream-8Heavy";
 }
 
 .flex {
@@ -35,13 +50,25 @@ body,
 /* Question */
 #question {
     padding: 10px;
-    flex-grow: 1;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* Input Field */
+#input {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #121212;
 }
 
 /* Keys */
 #keys {
     flex-wrap: wrap;
     padding: 10px;
+    max-width: 480px;
 }
 
 #keys > button {
