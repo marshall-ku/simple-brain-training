@@ -57,6 +57,7 @@ class Input extends React.Component {
             return (
                 <input
                     id="input"
+                    className="center"
                     value={this.state.input}
                     readOnly
                     type="number"
@@ -66,6 +67,7 @@ class Input extends React.Component {
             return (
                 <input
                     id="input"
+                    className="center"
                     value={this.state.input}
                     autoFocus
                     onKeyDown={this.handleKeyDown}

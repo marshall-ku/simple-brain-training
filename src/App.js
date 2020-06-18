@@ -55,21 +55,21 @@ class App extends React.Component {
                         <li onClick={() => this.setDifficulty(2, 20)}>
                             보통 (2 ~ 20)
                         </li>
-                        <li onClick={() => this.setDifficulty(11, 20)}>
-                            어려움 (11 ~ 20)
-                        </li>
                         <li onClick={() => this.setDifficulty(11, 30)}>
-                            아주 어려움 (11 ~ 30)
+                            어려움 (11 ~ 30)
+                        </li>
+                        <li onClick={() => this.setDifficulty(21, 30)}>
+                            아주 어려움 (21 ~ 40)
                         </li>
                     </ul>
                 );
             } else {
                 return (
                     <ul id="select">
-                        <li onClick={() => this.setCount(10)}>10</li>
-                        <li onClick={() => this.setCount(20)}>20</li>
-                        <li onClick={() => this.setCount(50)}>50</li>
-                        <li onClick={() => this.setCount(100)}>100</li>
+                        <li onClick={() => this.setCount(10)}>10 문제</li>
+                        <li onClick={() => this.setCount(20)}>20 문제</li>
+                        <li onClick={() => this.setCount(50)}>50 문제</li>
+                        <li onClick={() => this.setCount(100)}>100 문제</li>
                     </ul>
                 );
             }

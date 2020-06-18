@@ -1,6 +1,6 @@
 @font-face {
-    font-family: "S-CoreDream-8Heavy";
-    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-8Heavy.woff")
+    font-family: "HangeulNuri-Bold";
+    src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff")
         format("woff");
     font-weight: normal;
     font-style: normal;
@@ -21,14 +21,14 @@
 }
 
 html {
-    font-family: "S-CoreDream-8Heavy";
+    font-family: "HangeulNuri-Bold";
 }
 
 .flex {
     display: flex;
 }
 
-.cener {
+.center {
     text-align: center;
 }
 
@@ -47,6 +47,26 @@ body,
     flex-direction: column;
 }
 
+/* Select */
+#select {
+    list-style: none;
+    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.6);
+    background: #b388ff;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    border: 1px solid #805acb;
+}
+
+#select > li {
+    display: block;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#select > li:not(:last-child) {
+    border-bottom: 1px dashed #805acb;
+}
+
 /* Question */
 #question {
     padding: 10px;
@@ -58,25 +78,36 @@ body,
 #input {
     display: block;
     width: 100%;
-    max-width: 480px;
+    max-width: 680px;
     padding: 10px;
     margin-bottom: 10px;
+    font-size: 30px;
     border-bottom: 1px solid #121212;
+}
+
+#input::-webkit-outer-spin-button,
+#input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+#input[type="number"] {
+    -moz-appearance: textfield;
 }
 
 /* Keys */
 #keys {
+    width: 100%;
     flex-wrap: wrap;
     padding: 10px;
     margin-top: auto;
-    max-width: 480px;
+    max-width: 680px;
 }
 
 #keys > button {
     width: calc((100% - 20px) / 3);
     margin: 0 10px 10px 0;
     padding: 15px;
-    background: rgba(69, 69, 69, 0.5);
+    background: #b388ff;
     font-size: 20px;
     border-radius: 10px;
     cursor: pointer;
