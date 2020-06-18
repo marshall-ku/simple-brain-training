@@ -5,18 +5,48 @@ class Question extends React.Component {
         super(props);
         this.state = {
             index: 0,
+            min: this.props.questionDifficulty[0],
+            max: this.props.questionDifficulty[1],
+            first: this.randomNumber(),
+            second: this.randomNumber(),
         };
     }
+
+    randomNumber() {
+        return (
+            Math.round(
+                Math.random() *
+                    (this.props.questionDifficulty[0] -
+                        this.props.questionDifficulty[1])
+            ) + this.props.questionDifficulty[1]
+        );
+    }
+
+    generateQuestion = (lastResult) => {
+        let tmp1, tmp2;
+        const generateNumbers = () => {
+            tmp1 = this.randomNumber();
+            tmp2 = this.randomNumber();
+
+            if (tmp1 * tmp2 === lastResult) {
+                generateNumbers();
+            } else {
+                this.setState({
+                    first: tmp1,
+                    second: tmp2,
+                });
+            }
+        };
+        generateNumbers();
+    };
 
     componentDidUpdate(nextProps) {
         const { value } = this.props;
         if (nextProps.value !== value) {
             if (value) {
-                const question = this.props.questionList[this.state.index];
-                const split = question.split(" * ");
-                const result = split[0] * split[1];
+                console.log(value, this.state.first, this.state.second);
 
-                if (result === +value) {
+                if (this.state.first * this.state.second === +value) {
                     if (this.state.index === this.props.questionLength - 1) {
                         this.setState({
                             done: true,
@@ -26,6 +56,7 @@ class Question extends React.Component {
                         this.setState({
                             index: this.state.index + 1,
                         });
+                        this.generateQuestion(value);
                     }
                 }
             }
@@ -37,7 +68,7 @@ class Question extends React.Component {
             <div id="question">
                 {this.state.done
                     ? "done"
-                    : `${this.props.questionList[this.state.index]} = ?`}
+                    : `${this.state.first} * ${this.state.second} = ?`}
             </div>
         );
     }

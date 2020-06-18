@@ -2,15 +2,10 @@ import React from "react";
 import Keypad from "./Keypad";
 import Question from "./Question";
 
-const randomNumber = (min, max) => {
-    return Math.round(Math.random() * (max - min)) + min;
-};
-
 class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            question: undefined,
             difficulty: undefined,
             count: undefined,
         };
@@ -38,29 +33,12 @@ class App extends React.Component {
         );
     };
 
-    generateQuestions() {
-        const arr = [];
-        const difficulty = this.state.difficulty;
-        const min = difficulty[0];
-        const max = difficulty[1];
-        const count = this.state.count;
-        console.log("hi", difficulty, count);
-
-        for (let i = 0; i < count; i++) {
-            arr.push(`${randomNumber(min, max)} * ${randomNumber(min, max)}`);
-        }
-
-        this.setState({
-            question: arr,
-        });
-    }
-
     render() {
-        if (this.state.difficulty && this.state.count && this.state.question) {
+        if (this.state.difficulty && this.state.count) {
             return (
                 <React.Fragment>
                     <Question
-                        questionList={this.state.question}
+                        questionDifficulty={this.state.difficulty}
                         questionLength={this.state.count}
                         value={this.state.answer}
                     />
