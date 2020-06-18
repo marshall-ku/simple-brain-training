@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/simple-brain-training/static/css/main.a57652f8.chunk.css",
+    "main.js": "/simple-brain-training/static/js/main.60dc5f09.chunk.js",
+    "main.js.map": "/simple-brain-training/static/js/main.60dc5f09.chunk.js.map",
+    "runtime-main.js": "/simple-brain-training/static/js/runtime-main.098ef1ce.js",
+    "runtime-main.js.map": "/simple-brain-training/static/js/runtime-main.098ef1ce.js.map",
+    "static/js/2.a99220b9.chunk.js": "/simple-brain-training/static/js/2.a99220b9.chunk.js",
+    "static/js/2.a99220b9.chunk.js.map": "/simple-brain-training/static/js/2.a99220b9.chunk.js.map",
+    "index.html": "/simple-brain-training/index.html",
+    "precache-manifest.e52b4282300cbf47774a037655aa01a1.js": "/simple-brain-training/precache-manifest.e52b4282300cbf47774a037655aa01a1.js",
+    "service-worker.js": "/simple-brain-training/service-worker.js",
+    "static/css/main.a57652f8.chunk.css.map": "/simple-brain-training/static/css/main.a57652f8.chunk.css.map",
+    "static/js/2.a99220b9.chunk.js.LICENSE.txt": "/simple-brain-training/static/js/2.a99220b9.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.098ef1ce.js",
+    "static/js/2.a99220b9.chunk.js",
+    "static/css/main.a57652f8.chunk.css",
+    "static/js/main.60dc5f09.chunk.js"
+  ]
+}
