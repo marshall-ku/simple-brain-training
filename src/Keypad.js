@@ -82,7 +82,7 @@ class Keys extends React.Component {
 
     render() {
         return (
-            <div>
+            <div id="keys" className="flex center">
                 {keys.map((item) => {
                     return (
                         <button

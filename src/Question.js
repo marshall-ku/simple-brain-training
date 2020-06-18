@@ -3,7 +3,6 @@ import React from "react";
 class Question extends React.Component {
     constructor(props) {
         super(props);
-        console.log(this.props.questionList);
         this.state = {
             index: 0,
         };
@@ -16,18 +15,27 @@ class Question extends React.Component {
                 const question = this.props.questionList[this.state.index];
                 const split = question.split(" * ");
                 const result = split[0] * split[1];
-                console.log(value, result);
+
                 if (result === +value) {
-                    this.setState({
-                        index: this.state.index + 1,
-                    });
+                    if (this.state.index === 19) {
+                        this.setState({
+                            done: true,
+                        });
+                        alert("done!");
+                    } else {
+                        this.setState({
+                            index: this.state.index + 1,
+                        });
+                    }
                 }
             }
         }
     }
 
     render() {
-        return <div>{this.props.questionList[this.state.index]}</div>;
+        return (
+            <div id="question">{this.props.questionList[this.state.index]}</div>
+        );
     }
 }
 

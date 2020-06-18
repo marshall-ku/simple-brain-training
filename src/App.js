@@ -18,7 +18,7 @@ class App extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            question: generateQuestion(20, 1, 10),
+            question: generateQuestion(20, 2, 8),
         };
         this.confirm = this.confirm.bind(this);
     }

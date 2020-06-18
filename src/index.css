@@ -1,13 +1,59 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*,
+::before,
+::after {
+    padding: 0;
+    margin: 0;
+    outline: 0;
+    border: 0;
+    background: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.flex {
+    display: flex;
+}
+
+.cener {
+    text-align: center;
+}
+
+.flex.center {
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container */
+html,
+body,
+#root {
+    height: 100vh;
+}
+#root {
+    flex-direction: column;
+}
+
+/* Question */
+#question {
+    padding: 10px;
+    flex-grow: 1;
+}
+
+/* Keys */
+#keys {
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+#keys > button {
+    width: calc((100% - 20px) / 3);
+    margin: 0 10px 10px 0;
+    padding: 10px;
+    background: rgba(69, 69, 69, 0.5);
+    font-size: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#keys > button:nth-child(3n) {
+    margin-right: 0;
 }
