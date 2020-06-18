@@ -9,6 +9,7 @@ class Question extends React.Component {
             max: this.props.questionDifficulty[1],
             first: this.randomNumber(),
             second: this.randomNumber(),
+            start: new Date().getTime(),
         };
     }
 
@@ -28,7 +29,7 @@ class Question extends React.Component {
             tmp1 = this.randomNumber();
             tmp2 = this.randomNumber();
 
-            if (tmp1 * tmp2 === lastResult) {
+            if (tmp1 * tmp2 === +lastResult) {
                 generateNumbers();
             } else {
                 this.setState({
@@ -51,7 +52,11 @@ class Question extends React.Component {
                         this.setState({
                             done: true,
                         });
-                        alert("done!");
+                        alert(
+                            `done by ${
+                                (new Date().getTime() - this.state.start) / 1000
+                            } seconds`
+                        );
                     } else {
                         this.setState({
                             index: this.state.index + 1,
