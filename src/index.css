@@ -111,6 +111,11 @@ body,
     font-size: 20px;
     border-radius: 10px;
     cursor: pointer;
+    transition: box-shadow 0.2s;
+}
+
+#keys > button:active {
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
 }
 
 #keys > button:nth-child(3n) {
