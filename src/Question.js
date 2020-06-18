@@ -17,7 +17,7 @@ class Question extends React.Component {
                 const result = split[0] * split[1];
 
                 if (result === +value) {
-                    if (this.state.index === 19) {
+                    if (this.state.index === this.props.questionLength - 1) {
                         this.setState({
                             done: true,
                         });
