@@ -66,10 +66,7 @@ class App extends React.Component {
                             난이도 : <span>{this.state.difficultyString}</span>
                         </span>
                         <span>
-                            문제 :{" "}
-                            <span>
-                                {this.state.count / this.state.count} 개
-                            </span>
+                            문제 : <span>{this.state.count} 개</span>
                         </span>
                         <span>
                             초당 :{" "}
