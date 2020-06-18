@@ -62,8 +62,24 @@ class App extends React.Component {
                         모든 문제를 푸는데 {this.state.doneTime}초가 걸리셨네요.
                     </div>
                     <div className="small">
-                        난이도 : {this.state.difficultyString}
-                        &nbsp; 문제 : {this.state.count} 개
+                        <span>
+                            난이도 : <span>{this.state.difficultyString}</span>
+                        </span>
+                        <span>
+                            문제 :{" "}
+                            <span>
+                                {this.state.count / this.state.count} 개
+                            </span>
+                        </span>
+                        <span>
+                            초당 :{" "}
+                            <span>
+                                {(
+                                    this.state.doneTime / this.state.count
+                                ).toFixed(2)}{" "}
+                                개
+                            </span>
+                        </span>
                     </div>
                     <div>
                         <button className="button" onClick={this.restart}>

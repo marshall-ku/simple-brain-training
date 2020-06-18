@@ -135,6 +135,20 @@ h1 {
     font-size: 1.5rem;
 }
 
+#result span {
+    display: inline-block;
+}
+
+#result > div > span {
+    margin-right: 5px;
+}
+
+#result > div > span > span {
+    padding: 3px;
+    border-radius: 0.5rem;
+    background: #b388ff;
+}
+
 #result button {
     display: inline-block;
     padding: 10px;
@@ -143,4 +157,5 @@ h1 {
     border-radius: 15px;
     font-size: 1.3rem;
     border: 1px solid #805acb;
+    cursor: pointer;
 }
