@@ -116,3 +116,26 @@ body,
 #keys > button:nth-child(3n) {
     margin-right: 0;
 }
+
+/* Result Screen */
+#result > *:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+h1 {
+    font-size: 2.3rem;
+}
+
+#result .result {
+    font-size: 1.5rem;
+}
+
+#result button {
+    display: inline-block;
+    padding: 10px;
+    box-shadow: 3px 3px 10px 0px rgba(0, 0, 0, 0.6);
+    background: #b388ff;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    border: 1px solid #805acb;
+}

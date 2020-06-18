@@ -47,13 +47,8 @@ class Question extends React.Component {
             if (value) {
                 if (this.state.first * this.state.second === +value) {
                     if (this.state.index === this.props.questionLength - 1) {
-                        this.setState({
-                            done: true,
-                        });
-                        alert(
-                            `done by ${
-                                (new Date().getTime() - this.state.start) / 1000
-                            } seconds`
+                        this.props.done(
+                            (new Date().getTime() - this.state.start) / 1000
                         );
                     } else {
                         this.setState({
