@@ -67,6 +67,7 @@ class Input extends React.Component {
                 <input
                     id="input"
                     value={this.state.input}
+                    autoFocus
                     onKeyDown={this.handleKeyDown}
                     onChange={this.handleChange}
                     type="number"

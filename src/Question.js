@@ -45,8 +45,6 @@ class Question extends React.Component {
         const { value } = this.props;
         if (nextProps.value !== value) {
             if (value) {
-                console.log(value, this.state.first, this.state.second);
-
                 if (this.state.first * this.state.second === +value) {
                     if (this.state.index === this.props.questionLength - 1) {
                         this.setState({
