@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "de3e317b0ee875232f64c36b611fb572",
+    "revision": "11620a0f13b52cb598c8adcf3a9097fe",
     "url": "/simple-brain-training/index.html"
   },
   {
-    "revision": "fb543b19f0f3d95eac44",
+    "revision": "daf497e7976090ab67a2",
     "url": "/simple-brain-training/static/css/main.b3138dc5.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/simple-brain-training/static/js/2.a99220b9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fb543b19f0f3d95eac44",
-    "url": "/simple-brain-training/static/js/main.48c4e696.chunk.js"
+    "revision": "daf497e7976090ab67a2",
+    "url": "/simple-brain-training/static/js/main.b9876e1f.chunk.js"
   },
   {
     "revision": "4c5ef06f2274054493db",
