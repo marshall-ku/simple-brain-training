@@ -56,6 +56,8 @@ class Question extends React.Component {
                         });
                         this.generateQuestion(value);
                     }
+                } else {
+                    this.props.wrong();
                 }
             }
         }

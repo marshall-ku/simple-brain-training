@@ -10,9 +10,11 @@ class App extends React.Component {
             difficultyString: "",
             count: undefined,
             done: false,
+            wrong: 0,
         };
         this.confirm = this.confirm.bind(this);
         this.done = this.done.bind(this);
+        this.wrong = this.wrong.bind(this);
     }
 
     confirm = (number) => {
@@ -37,6 +39,12 @@ class App extends React.Component {
         );
     };
 
+    wrong() {
+        this.setState({
+            wrong: this.state.wrong + 1,
+        });
+    }
+
     done = (time) => {
         this.setState({
             done: true,
@@ -50,6 +58,7 @@ class App extends React.Component {
             difficultyString: "",
             count: undefined,
             done: false,
+            wrong: 0,
         });
     };
 
@@ -61,6 +70,7 @@ class App extends React.Component {
             difficultyString,
             count,
             answer,
+            wrong,
         } = this.state;
         if (done) {
             return (
@@ -72,6 +82,9 @@ class App extends React.Component {
                     <div className="small">
                         <span>
                             난이도 : <span>{difficultyString}</span>
+                        </span>
+                        <span>
+                            오답 : <span>{wrong} 회</span>
                         </span>
                         <span>
                             문제 : <span>{count} 개</span>
@@ -94,6 +107,7 @@ class App extends React.Component {
                     <Question
                         questionDifficulty={difficulty}
                         questionLength={count}
+                        wrong={this.wrong}
                         done={this.done}
                         value={answer}
                     />
