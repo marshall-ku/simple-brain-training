@@ -54,28 +54,31 @@ class App extends React.Component {
     };
 
     render() {
-        if (this.state.done) {
+        const {
+            done,
+            doneTime,
+            difficulty,
+            difficultyString,
+            count,
+            answer,
+        } = this.state;
+        if (done) {
             return (
                 <div id="result">
                     <h1>끝났습니다!</h1>
                     <div className="result">
-                        모든 문제를 푸는데 {this.state.doneTime}초가 걸리셨네요.
+                        모든 문제를 푸는데 {doneTime}초가 걸리셨네요.
                     </div>
                     <div className="small">
                         <span>
-                            난이도 : <span>{this.state.difficultyString}</span>
+                            난이도 : <span>{difficultyString}</span>
                         </span>
                         <span>
-                            문제 : <span>{this.state.count} 개</span>
+                            문제 : <span>{count} 개</span>
                         </span>
                         <span>
                             문제당 :{" "}
-                            <span>
-                                {(
-                                    this.state.doneTime / this.state.count
-                                ).toFixed(2)}{" "}
-                                초
-                            </span>
+                            <span>{(doneTime / count).toFixed(2)} 초</span>
                         </span>
                     </div>
                     <div>
@@ -85,20 +88,20 @@ class App extends React.Component {
                     </div>
                 </div>
             );
-        } else if (this.state.difficulty && this.state.count) {
+        } else if (difficulty && count) {
             return (
                 <React.Fragment>
                     <Question
-                        questionDifficulty={this.state.difficulty}
-                        questionLength={this.state.count}
+                        questionDifficulty={difficulty}
+                        questionLength={count}
                         done={this.done}
-                        value={this.state.answer}
+                        value={answer}
                     />
                     <Keypad confirm={this.confirm} />
                 </React.Fragment>
             );
         } else {
-            if (!this.state.difficulty) {
+            if (!difficulty) {
                 return (
                     <ul id="select">
                         <li onClick={() => this.setDifficulty(2, 10, "쉬움")}>

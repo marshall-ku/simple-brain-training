@@ -3,10 +3,11 @@ import React from "react";
 class Question extends React.Component {
     constructor(props) {
         super(props);
+        const { questionDifficulty } = this.props;
         this.state = {
             index: 0,
-            min: this.props.questionDifficulty[0],
-            max: this.props.questionDifficulty[1],
+            min: questionDifficulty[0],
+            max: questionDifficulty[1],
             first: this.randomNumber(),
             second: this.randomNumber(),
             start: new Date().getTime(),
@@ -14,12 +15,11 @@ class Question extends React.Component {
     }
 
     randomNumber() {
+        const { questionDifficulty } = this.props;
         return (
             Math.round(
-                Math.random() *
-                    (this.props.questionDifficulty[0] -
-                        this.props.questionDifficulty[1])
-            ) + this.props.questionDifficulty[1]
+                Math.random() * (questionDifficulty[0] - questionDifficulty[1])
+            ) + questionDifficulty[1]
         );
     }
 
@@ -64,9 +64,7 @@ class Question extends React.Component {
     render() {
         return (
             <div id="question">
-                {this.state.done
-                    ? "done"
-                    : `${this.state.first} * ${this.state.second} = ?`}
+                {`${this.state.first} * ${this.state.second} = ?`}
             </div>
         );
     }

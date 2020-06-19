@@ -53,12 +53,13 @@ class Input extends React.Component {
     }
 
     render() {
+        const { input } = this.state;
         if (this.state.touchable) {
             return (
                 <input
                     id="input"
                     className="center"
-                    value={this.state.input}
+                    value={input}
                     readOnly
                     type="number"
                 ></input>
@@ -68,7 +69,7 @@ class Input extends React.Component {
                 <input
                     id="input"
                     className="center"
-                    value={this.state.input}
+                    value={input}
                     autoFocus
                     onKeyDown={this.handleKeyDown}
                     onChange={this.handleChange}
