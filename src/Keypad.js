@@ -23,9 +23,15 @@ class Input extends React.Component {
     };
 
     handleChange = (e) => {
-        this.setState({
-            input: e.target.value,
-        });
+        if (this.state.input.length >= 5) {
+            this.setState({
+                input: e.target.value[5],
+            });
+        } else {
+            this.setState({
+                input: e.target.value,
+            });
+        }
     };
 
     delete() {
@@ -44,9 +50,15 @@ class Input extends React.Component {
                 } else if (trueValue === "ok") {
                     this.submit();
                 } else {
-                    this.setState({
-                        input: this.state.input + trueValue,
-                    });
+                    if (this.state.input.length >= 5) {
+                        this.setState({
+                            input: trueValue,
+                        });
+                    } else {
+                        this.setState({
+                            input: this.state.input + trueValue,
+                        });
+                    }
                 }
             }
         }
