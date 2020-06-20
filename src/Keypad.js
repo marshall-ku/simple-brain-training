@@ -122,16 +122,16 @@ class Keypad extends React.Component {
     handleClick = (item) => {
         this.setState({
             input: item,
-            checkOK: item === "ok",
         });
     };
 
     render() {
+        const { input } = this.state;
         return (
             <React.Fragment>
                 <Input
-                    value={`${this.state.input}${
-                        this.state.checkOK ? "" : `- ${performance.now()}`
+                    value={`${input}${
+                        input === "ok" ? "" : `- ${performance.now()}`
                     }`}
                     confirm={this.props.confirm}
                 />

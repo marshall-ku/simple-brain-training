@@ -43,16 +43,17 @@ class Question extends React.Component {
 
     componentDidUpdate(prevProps) {
         const { value } = this.props;
+        const { index } = this.state;
         if (prevProps.value !== value) {
             if (value) {
                 if (this.state.first * this.state.second === +value) {
-                    if (this.state.index === this.props.questionLength - 1) {
+                    if (index === this.props.questionLength - 1) {
                         this.props.done(
                             (new Date().getTime() - this.state.start) / 1000
                         );
                     } else {
                         this.setState({
-                            index: this.state.index + 1,
+                            index: index + 1,
                         });
                         this.generateQuestion(value);
                     }
