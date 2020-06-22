@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/simple-brain-training/static/css/main.9f499d65.chunk.css",
+    "main.css": "/simple-brain-training/static/css/main.7eb2bdc6.chunk.css",
     "main.js": "/simple-brain-training/static/js/main.1ef7f5d3.chunk.js",
     "main.js.map": "/simple-brain-training/static/js/main.1ef7f5d3.chunk.js.map",
     "runtime-main.js": "/simple-brain-training/static/js/runtime-main.098ef1ce.js",
@@ -8,15 +8,15 @@
     "static/js/2.a99220b9.chunk.js": "/simple-brain-training/static/js/2.a99220b9.chunk.js",
     "static/js/2.a99220b9.chunk.js.map": "/simple-brain-training/static/js/2.a99220b9.chunk.js.map",
     "index.html": "/simple-brain-training/index.html",
-    "precache-manifest.d018125435762008e747ff732e23a869.js": "/simple-brain-training/precache-manifest.d018125435762008e747ff732e23a869.js",
+    "precache-manifest.6e292088ecccf38c28d1166406d431c3.js": "/simple-brain-training/precache-manifest.6e292088ecccf38c28d1166406d431c3.js",
     "service-worker.js": "/simple-brain-training/service-worker.js",
-    "static/css/main.9f499d65.chunk.css.map": "/simple-brain-training/static/css/main.9f499d65.chunk.css.map",
+    "static/css/main.7eb2bdc6.chunk.css.map": "/simple-brain-training/static/css/main.7eb2bdc6.chunk.css.map",
     "static/js/2.a99220b9.chunk.js.LICENSE.txt": "/simple-brain-training/static/js/2.a99220b9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.098ef1ce.js",
     "static/js/2.a99220b9.chunk.js",
-    "static/css/main.9f499d65.chunk.css",
+    "static/css/main.7eb2bdc6.chunk.css",
     "static/js/main.1ef7f5d3.chunk.js"
   ]
 }
