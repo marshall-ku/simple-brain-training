@@ -4,6 +4,8 @@
 
 곱셈을 통한 간단한 두뇌 훈련 게임입니다.
 
+[App](https://marshall-ku.github.io/simple-brain-training)
+
 ---
 
 쉬움, 보통, 어려움, 아주 어려움 총 4단계로 이루어져 있습니다.
