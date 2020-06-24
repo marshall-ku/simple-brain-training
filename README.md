@@ -1,6 +1,6 @@
 ## Simple Brain Training
 
-<img src="https://k.kakaocdn.net/dn/bMQOyx/btqE7nWou1v/6SNqi7oNDuqXID6GizVlkK/img.jpg>
+![Brain Training](https://k.kakaocdn.net/dn/bMQOyx/btqE7nWou1v/6SNqi7oNDuqXID6GizVlkK/img.jpg")
 
 곱셈을 통한 간단한 두뇌 훈련 게임입니다.
 
