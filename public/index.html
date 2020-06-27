@@ -12,6 +12,14 @@
         <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
         <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
         <title>Brain Training</title>
+        <script>
+            const darkTheme =
+                localStorage.getItem("dark") === "true" ||
+                window.matchMedia("(prefers-color-scheme: dark)").matches ||
+                false;
+
+            darkTheme && document.documentElement.classList.add("dark");
+        </script>
         <meta name="description" content="곱셈으로 하는 간단한 두뇌 트레이닝" />
         <meta property="og:type" content="website" />
         <meta

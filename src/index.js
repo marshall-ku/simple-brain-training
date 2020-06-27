@@ -2,10 +2,12 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import DarkTheme from "./DarkTheme";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
     <React.StrictMode>
+        <DarkTheme />
         <App />
     </React.StrictMode>,
     document.getElementById("root")
