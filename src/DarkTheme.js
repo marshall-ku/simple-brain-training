@@ -17,13 +17,15 @@ class DarkTheme extends React.Component {
                   {
                       dark: false,
                   },
-                  html.classList.remove("dark")
+                  html.classList.remove("dark"),
+                  localStorage.setItem("dark", "false")
               )
             : this.setState(
                   {
                       dark: true,
                   },
-                  html.classList.add("dark")
+                  html.classList.add("dark"),
+                  localStorage.setItem("dark", "true")
               );
     };
 
@@ -31,9 +33,12 @@ class DarkTheme extends React.Component {
         const { dark } = this.state;
         return (
             <>
-                <button className="darkThemeButton" onClick={this.toggleTheme}>
-                    <span role="img" aria-label="Light Mode">
-                        {dark ? "🌙" : "☀️"}
+                <button id="darkThemeButton" onClick={this.toggleTheme}>
+                    <span
+                        role="img"
+                        aria-label={dark ? "밝은 모드" : "어두운 모드"}
+                    >
+                        {dark ? "☀️" : "🌙"}
                     </span>
                 </button>
             </>

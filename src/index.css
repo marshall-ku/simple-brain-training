@@ -170,3 +170,21 @@ h1 {
     border: 1px solid #805acb;
     cursor: pointer;
 }
+
+/* Dark Mode Button */
+#darkThemeButton {
+    position: fixed;
+    top: 10px;
+    left: calc(50% - 1rem);
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    padding: 5px;
+    border-radius: 50%;
+    background: rgba(60, 60, 60, 0.5);
+    cursor: pointer;
+}
+
+html.dark #darkThemeButton {
+    background: rgba(190, 190, 190, 0.5);
+}
