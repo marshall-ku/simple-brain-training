@@ -1,7 +1,10 @@
 import React from "react";
 
-class Question extends React.Component {
-    constructor(props) {
+export default class Question extends React.Component<
+    QuestionProps,
+    QuestionState
+> {
+    constructor(props: QuestionProps) {
         super(props);
         const { questionDifficulty } = this.props;
         this.state = {
@@ -14,7 +17,7 @@ class Question extends React.Component {
         };
     }
 
-    randomNumber() {
+    randomNumber(): number {
         const { questionDifficulty } = this.props;
         return (
             Math.round(
@@ -23,13 +26,13 @@ class Question extends React.Component {
         );
     }
 
-    generateQuestion = (lastResult) => {
+    generateQuestion = (lastResult: number) => {
         let tmp1, tmp2;
         const generateNumbers = () => {
             tmp1 = this.randomNumber();
             tmp2 = this.randomNumber();
 
-            if (tmp1 * tmp2 === +lastResult) {
+            if (tmp1 * tmp2 === lastResult) {
                 generateNumbers();
             } else {
                 this.setState({
@@ -41,12 +44,12 @@ class Question extends React.Component {
         generateNumbers();
     };
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: QuestionProps) {
         const { value } = this.props;
         const { index } = this.state;
         if (prevProps.value !== value) {
             if (value) {
-                if (this.state.first * this.state.second === +value) {
+                if (this.state.first * this.state.second === value) {
                     if (index === this.props.questionLength - 1) {
                         this.props.done(
                             (new Date().getTime() - this.state.start) / 1000
@@ -72,5 +75,3 @@ class Question extends React.Component {
         );
     }
 }
-
-export default Question;

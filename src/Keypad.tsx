@@ -1,8 +1,8 @@
 import React from "react";
-const keys = [1, 2, 3, 4, 5, 6, 7, 8, 9, "del", 0, "ok"];
+const keys = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "del", "0", "ok"];
 
-class Input extends React.Component {
-    constructor(props) {
+class Input extends React.Component<InputProps, InputState> {
+    constructor(props: InputProps) {
         super(props);
         this.state = {
             input: "",
@@ -12,24 +12,24 @@ class Input extends React.Component {
     }
 
     submit = () => {
-        this.props.confirm(this.state.input);
+        this.props.confirm(+this.state.input);
         this.setState({
             input: "",
         });
     };
 
-    handleKeyDown = (e) => {
-        e.key === "Enter" && this.submit();
+    handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+        event.key === "Enter" && this.submit();
     };
 
-    handleChange = (e) => {
+    handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         if (this.state.input.length >= 5) {
             this.setState({
-                input: e.target.value[5],
+                input: event.target.value[5],
             });
         } else {
             this.setState({
-                input: e.target.value,
+                input: event.target.value,
             });
         }
     };
@@ -40,7 +40,7 @@ class Input extends React.Component {
         });
     }
 
-    componentDidUpdate(prevProps) {
+    componentDidUpdate(prevProps: InputProps) {
         const { value } = this.props;
         if (prevProps.value !== value) {
             const trueValue = value.replace(/-(.*)/g, "");
@@ -92,13 +92,13 @@ class Input extends React.Component {
     }
 }
 
-class Keys extends React.Component {
-    constructor(props) {
+class Keys extends React.Component<KeysProps, KeysState> {
+    constructor(props: KeysProps) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick = (item) => {
+    handleClick = (item: string) => {
         this.props.click(item);
     };
 
@@ -122,8 +122,8 @@ class Keys extends React.Component {
     }
 }
 
-class Keypad extends React.Component {
-    constructor(props) {
+export default class Keypad extends React.Component<KeypadProps, KeypadState> {
+    constructor(props: KeypadProps) {
         super(props);
         this.state = {
             input: "",
@@ -131,7 +131,7 @@ class Keypad extends React.Component {
         this.handleClick = this.handleClick.bind(this);
     }
 
-    handleClick = (item) => {
+    handleClick = (item: string) => {
         this.setState({
             input: item,
         });
@@ -140,7 +140,7 @@ class Keypad extends React.Component {
     render() {
         const { input } = this.state;
         return (
-            <React.Fragment>
+            <>
                 <Input
                     value={`${input}${
                         input === "ok" ? "" : `- ${performance.now()}`
@@ -148,9 +148,7 @@ class Keypad extends React.Component {
                     confirm={this.props.confirm}
                 />
                 <Keys click={this.handleClick} />
-            </React.Fragment>
+            </>
         );
     }
 }
-
-export default Keypad;

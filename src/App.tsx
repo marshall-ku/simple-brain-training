@@ -2,13 +2,13 @@ import React from "react";
 import Keypad from "./Keypad";
 import Question from "./Question";
 
-class App extends React.Component {
-    constructor(props) {
+class App extends React.Component<AppProps, AppState> {
+    constructor(props: AppProps) {
         super(props);
         this.state = {
-            difficulty: undefined,
+            difficulty: [0, 0],
             difficultyString: "",
-            count: undefined,
+            count: 0,
             done: false,
             wrong: 0,
         };
@@ -17,26 +17,23 @@ class App extends React.Component {
         this.wrong = this.wrong.bind(this);
     }
 
-    confirm = (number) => {
+    confirm = (number: number) => {
         this.setState({
             answer: number,
         });
     };
 
-    setDifficulty = (min, max, string) => {
+    setDifficulty = (min: number, max: number, string: string) => {
         this.setState({
             difficulty: [min, max],
             difficultyString: string,
         });
     };
 
-    setCount = (number) => {
-        this.setState(
-            {
-                count: number,
-            },
-            this.generateQuestions
-        );
+    setCount = (number: number) => {
+        this.setState({
+            count: number,
+        });
     };
 
     wrong() {
@@ -45,7 +42,7 @@ class App extends React.Component {
         });
     }
 
-    done = (time) => {
+    done = (time: number) => {
         this.setState({
             done: true,
             doneTime: time,
@@ -54,9 +51,9 @@ class App extends React.Component {
 
     restart = () => {
         this.setState({
-            difficulty: undefined,
+            difficulty: [0, 0],
             difficultyString: "",
-            count: undefined,
+            count: 0,
             done: false,
             wrong: 0,
         });
@@ -72,7 +69,8 @@ class App extends React.Component {
             answer,
             wrong,
         } = this.state;
-        if (done) {
+
+        if (done && doneTime) {
             return (
                 <div id="result">
                     <h1>끝났습니다!</h1>
@@ -103,7 +101,7 @@ class App extends React.Component {
             );
         } else if (difficulty && count) {
             return (
-                <React.Fragment>
+                <>
                     <Question
                         questionDifficulty={difficulty}
                         questionLength={count}
@@ -112,10 +110,10 @@ class App extends React.Component {
                         value={answer}
                     />
                     <Keypad confirm={this.confirm} />
-                </React.Fragment>
+                </>
             );
         } else {
-            if (!difficulty) {
+            if (!difficulty[0]) {
                 return (
                     <ul id="select">
                         <li onClick={() => this.setDifficulty(2, 10, "쉬움")}>

@@ -1,7 +1,16 @@
 import React from "react";
 
-class DarkTheme extends React.Component {
-    constructor(props) {
+declare global {
+    interface Window {
+        darkTheme: boolean;
+    }
+}
+
+export default class DarkTheme extends React.Component<
+    DarkThemeProps,
+    DarkThemeState
+> {
+    constructor(props: DarkThemeProps) {
         super(props);
         this.state = {
             dark: window.darkTheme,
@@ -17,15 +26,19 @@ class DarkTheme extends React.Component {
                   {
                       dark: false,
                   },
-                  html.classList.remove("dark"),
-                  localStorage.setItem("dark", "false")
+                  () => {
+                      html.classList.remove("dark");
+                      localStorage.setItem("dark", "false");
+                  }
               )
             : this.setState(
                   {
                       dark: true,
                   },
-                  html.classList.add("dark"),
-                  localStorage.setItem("dark", "true")
+                  () => {
+                      html.classList.add("dark");
+                      localStorage.setItem("dark", "true");
+                  }
               );
     };
 
@@ -45,5 +58,3 @@ class DarkTheme extends React.Component {
         );
     }
 }
-
-export default DarkTheme;
